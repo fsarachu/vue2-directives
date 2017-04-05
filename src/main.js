@@ -7,7 +7,7 @@ Vue.directive('highlight', {
         el.style.paddingLeft = '.5em';
         el.style.paddingRight = '.5em';
         el.style.borderRadius = '5px';
-        el.style.backgroundColor = '#dab5ff';
+        el.style.backgroundColor = binding.value;
     }
 });
 
