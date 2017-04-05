@@ -28,13 +28,39 @@
                     Some <span v-highlight:background.upper="'#99ddff'">Highlighted</span> text with custom background
                     color and upper modifier
                 </p>
+
+                <p>
+                    Some <span v-local-highlight:background.upper="'#ff9999'">Locally Highlighted</span> text with
+                    custom background color and upper modifier
+                </p>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    export default {}
+    export default {
+        directives: {
+            'local-highlight': {
+                bind(el, binding, vnode) {
+                    el.style.display = 'inline-block';
+                    el.style.paddingLeft = '.5em';
+                    el.style.paddingRight = '.5em';
+                    el.style.borderRadius = '5px';
+
+                    if (binding.arg == 'background') {
+                        el.style.backgroundColor = binding.value;
+                    } else {
+                        el.style.backgroundColor = '#ffef9e';
+                    }
+
+                    if (binding.modifiers['upper']) {
+                        el.style.textTransform = 'uppercase';
+                    }
+                }
+            }
+        }
+    }
 </script>
 
 <style>
