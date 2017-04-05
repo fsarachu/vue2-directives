@@ -10,7 +10,8 @@
         <div class="row">
             <div class="col-xs-12 text-center">
                 <h1>Custom Directives</h1>
-                <p>Some <span v-highlight="'#dab5ff'">Highlighted</span> text here</p>
+                <p>Some <span v-highlight:background="'#dab5ff'">Highlighted</span> text with custom background color</p>
+                <p>Some <span v-highlight>Highlighted</span> text with default background color</p>
             </div>
         </div>
     </div>
