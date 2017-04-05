@@ -7,10 +7,15 @@ Vue.directive('highlight', {
         el.style.paddingLeft = '.5em';
         el.style.paddingRight = '.5em';
         el.style.borderRadius = '5px';
+
         if(binding.arg == 'background') {
             el.style.backgroundColor = binding.value;
         } else {
             el.style.backgroundColor = '#ffef9e';
+        }
+
+        if(binding.modifiers['upper']) {
+            el.style.textTransform = 'uppercase';
         }
     }
 });
